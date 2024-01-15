@@ -25,8 +25,6 @@ sudo systemctl set-default graphical.target
 sudo systemctl reboot
 sudo apt install tigervnc-standalone-server tigervnc-common tightvncserver tigervnc-tools
 sudo systemctl reboot
-vncserver #Enter password
-vncserver -kill hostname:1
 ```
 
 Edit `~/.vnc/xstartup`:
@@ -55,5 +53,7 @@ localhost=0
 Run
 
 ```
+vncserver #Enter password
+vncserver -kill hostname:1
 sudo systemctl enable --now tigervncserver@:1.service
 ```
