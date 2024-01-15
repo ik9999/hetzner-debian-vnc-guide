@@ -58,3 +58,26 @@ vncserver -kill hostname:1
 sudo systemctl enable --now tigervncserver@:1.service
 sudo systemctl status tigervncserver@:1.service
 ```
+
+# Installing wine
+
+```
+sudo apt update && sudo apt upgrade
+sudo apt install software-properties-common apt-transport-https curl -y
+sudo dpkg --add-architecture i386
+curl -fSsL https://dl.winehq.org/wine-builds/winehq.key | gpg --dearmor | sudo tee /usr/share/keyrings/winehq.gpg > /dev/null
+echo deb [signed-by=/usr/share/keyrings/winehq.gpg] http://dl.winehq.org/wine-builds/debian/ $(lsb_release -cs) main | sudo tee /etc/apt/sources.list.d/winehq.list
+sudo apt update
+sudo apt install winehq-stable --install-recommends
+wine --version
+WINEPREFIX="$HOME/.wine" WINEARCH=win64 wine wineboot
+```
+
+# Installing winetricks
+
+```
+cd ~
+sudo apt-get install zenity cabextract
+wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+chmod 777 winetricks
+```
