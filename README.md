@@ -20,7 +20,40 @@ echo "AcceptEnv *" >> /etc/ssh/sshd_config
 echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config
 mkdir -p /home/eq/.ssh
 cat ~/.ssh/authorized_keys > /home/eq/.ssh/authorized_keys
-sudo apt-get install xfce4
+sudo apt-get install xfce4 xfce4-goodies task-xfce-desktop dbus-x11
 sudo systemctl set-default graphical.target
+sudo systemctl reboot
+sudo apt install tigervnc-standalone-server tigervnc-common tightvncserver tigervnc-tools
+sudo systemctl reboot
+vncserver #Enter password
+vncserver -kill hostname:1
+```
 
+Edit `~/.vnc/xstartup`:
+
+```
+#!/bin/bash
+xrdb $HOME/.Xresources
+startxfce4
+```
+
+Edit `/etc/tigervnc/vncserver.users`:
+
+```
+:1=eq
+```
+
+Edit `~/.vnc/config`:
+
+```
+session=xfce
+geometry=1920x1080
+alwaysshared
+localhost=0
+```
+
+Run
+
+```
+sudo systemctl enable --now tigervncserver@:1.service
 ```
