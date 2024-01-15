@@ -1,2 +1,26 @@
 # hetzner-debian-vnc
 Setting up XFCE4 VNC server on hetzner. OS debian 12.
+
+```
+apt-get update
+apt-get full-upgrade
+apt-get install vim
+vim /etc/hosts #edit hostname to a custom one
+vim /etc/hostname #edit hostname to a custom one 
+reboot
+adduser eq
+usermod -aG sudo eq
+sudo -l -U eq
+echo "eq        ALL=(ALL)       NOPASSWD: ALL" > /etc/sudoers.d/eq-nopasswd
+echo "AllowUsers eq" >> /etc/ssh/sshd_config
+echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
+echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config
+sed -i '/^AcceptEnv/d' /etc/ssh/sshd_config
+echo "AcceptEnv *" >> /etc/ssh/sshd_config
+echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config
+mkdir -p /home/eq/.ssh
+cat ~/.ssh/authorized_keys > /home/eq/.ssh/authorized_keys
+sudo apt-get install xfce4
+sudo systemctl set-default graphical.target
+
+```
