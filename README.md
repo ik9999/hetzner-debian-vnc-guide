@@ -56,4 +56,5 @@ Run
 vncserver #Enter password
 vncserver -kill hostname:1
 sudo systemctl enable --now tigervncserver@:1.service
+sudo systemctl status tigervncserver@:1.service
 ```
