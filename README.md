@@ -56,6 +56,7 @@ localhost=0
 Run
 
 ```
+sudo chmod 777 ~/.vnc/xstartup
 vncserver #Enter password
 vncserver -kill hostname:1
 sudo systemctl enable --now tigervncserver@:1.service
