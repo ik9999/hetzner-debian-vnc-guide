@@ -23,7 +23,7 @@ echo "AcceptEnv *" >> /etc/ssh/sshd_config
 echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config
 su eq
 mkdir -p /home/eq/.ssh
-cat ~/.ssh/authorized_keys > /home/eq/.ssh/authorized_keys
+sudo cat ~/.ssh/authorized_keys > /home/eq/.ssh/authorized_keys
 sudo apt-get install xfce4 xfce4-goodies task-xfce-desktop dbus-x11
 sudo systemctl set-default graphical.target
 sudo systemctl reboot
