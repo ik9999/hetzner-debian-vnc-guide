@@ -5,11 +5,11 @@ Setting up XFCE4 VNC server on hetzner. OS debian 12.
 apt-get update
 apt-get full-upgrade
 apt-get install vim
-systemctl enable ssh.socket
 systemctl enable ssh
 systemctl restart ssh
 vim /etc/hosts #edit hostname to a custom one
-vim /etc/hostname #edit hostname to a custom one 
+vim /etc/hostname #edit hostname to a custom one
+sudo dpkg-reconfigure tzdata # set UTC
 reboot
 adduser eq
 usermod -aG sudo eq
