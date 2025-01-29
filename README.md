@@ -113,4 +113,12 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - bash)"
 ```
 
+# Install nodejs + pm2
 
+```
+sudo su
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+apt-get install nodejs -y
+sudo npm install -g pm2
+pm2 startup
+```
