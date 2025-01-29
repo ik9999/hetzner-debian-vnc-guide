@@ -32,6 +32,13 @@ sudo systemctl reboot
 su eq
 ```
 
+Edit `/etc/gai.conf` (use ipv4 for outgoing connections):
+
+```
+precedence ::ffff:0:0/96  100
+scopev4 ::ffff:0.0.0.0/96       14
+```
+
 Edit `~/.vnc/xstartup`:
 
 ```
@@ -51,7 +58,7 @@ Edit `~/.vnc/config`:
 ```
 session=xfce
 geometry=1920x1080
-alwaysshared
+alwaysshared/etc/gai.conf
 localhost=0
 ```
 
