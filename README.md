@@ -94,3 +94,23 @@ sudo apt-get install zenity cabextract
 wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
 chmod 777 winetricks
 ```
+
+# Installing pyenv python3 + pipenv
+
+```
+sudo apt-get install git
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev
+curl -fsSL https://pyenv.run | bash
+```
+
+Add to `~/.bashrc`:
+
+```
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+```
+
+
