@@ -142,3 +142,17 @@ apt-get install nodejs -y
 sudo npm install -g pm2
 pm2 startup
 ```
+
+# Run logrotate every hour
+
+```
+sudo systemctl enable logrotate.timer
+export SYSTEMD_EDITOR="/bin/vim"
+sudo -E systemctl edit logrotate.timer
+```
+
+Add 
+```
+[Timer]
+OnCalendar=hourly
+```
