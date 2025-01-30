@@ -137,7 +137,7 @@ eval "$(pyenv init - bash)"
 
 ```
 sudo su
-curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 apt-get install nodejs -y
 sudo npm install -g pm2
 pm2 startup
