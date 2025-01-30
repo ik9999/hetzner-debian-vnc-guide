@@ -1,6 +1,26 @@
 # hetzner-debian-vnc
 Setting up XFCE4 VNC server on hetzner. OS debian 12.
 
+`/etc/apt/sources.list`
+
+```
+deb http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware
+deb-src http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware
+
+deb http://security.debian.org/debian-security bookworm-security main contrib non-free
+deb-src http://security.debian.org/debian-security bookworm-security main contrib non-free
+
+deb http://deb.debian.org/debian bookworm-updates main contrib non-free
+deb-src http://deb.debian.org/debian bookworm-updates main contrib non-free
+
+deb http://deb.debian.org/debian bookworm-backports contrib main
+deb-src http://deb.debian.org/debian bookworm-backports contrib main
+
+deb http://deb.debian.org/debian bullseye-backports contrib main
+deb-src http://deb.debian.org/debian bullseye-backports contrib main
+```
+
+
 ```
 apt-get update
 apt-get full-upgrade
